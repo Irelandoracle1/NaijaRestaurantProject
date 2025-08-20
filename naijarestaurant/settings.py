@@ -96,6 +96,8 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
+
 WSGI_APPLICATION = 'naijarestaurant.wsgi.application'
 
 
