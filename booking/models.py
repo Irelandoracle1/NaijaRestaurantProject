@@ -16,8 +16,9 @@ class Menu(models.Model):
     class Meta:
         ordering = ["name"]
 
-    def _str_(self):
+    def __str__(self):   # 👈 fixed
         return f"{self.name} — {self.price}"
+
 
 class Booking(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="bookings")
@@ -30,14 +31,12 @@ class Booking(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        # Simple, strict no-double-booking rule: exactly one booking per date+time
         constraints = [
             models.UniqueConstraint(fields=["date", "time"], name="unique_booking_slot")
         ]
         ordering = ["-date", "-time"]
 
     def clean(self):
-        # Optional: forbid past bookings
         dt = timezone.make_aware(
             timezone.datetime.combine(self.date, self.time),
             timezone.get_current_timezone()
@@ -45,5 +44,5 @@ class Booking(models.Model):
         if dt < timezone.now():
             raise ValidationError("You cannot book a past date/time.")
 
-    def _str_(self):
+    def __str__(self):   # 👈 fixed
         return f"{self.user} @ {self.date} {self.time} ({self.guests})"
