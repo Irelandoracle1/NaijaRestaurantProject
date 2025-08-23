@@ -1,13 +1,16 @@
 {% extends "base.html" %}
-
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin: auto; width: 500px;">
   <h2>{% if object %}Edit Booking{% else %}Create Booking{% endif %}</h2>
-  <form method="post">
+  <form method="post" class="form-group">
     {% csrf_token %}
     {{ form.as_p }}
-    {% if form.non_field_errors %}
-      <p>{{ form.non_field_errors }}</p>
-    {% endif %}
-    <button type="submit">Save</button>
+    {% if form.non_field_errors %}<p>{{ form.non_field_errors }}</p>{% endif %}
+    <button type="submit" class="btn btn-secondary btn-lg">Save</button>
   </form>
-{% endblock %}
+  </div>
+  </div>
+  </div>
+{% endblock %}
