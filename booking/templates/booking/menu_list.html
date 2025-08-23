@@ -1,16 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Menu</h2>
-  <ul>
-    {% for item in menu_items %}
-      <li><strong>{{ item.name }}</strong> — {{ item.price }}<br>{{ item.description }}</li>
-    {% empty %}
-      <li>No menu items yet.</li>
-    {% endfor %}
-  </ul>
-  
-  
-
   <div class="menu-section">
     <h2>Here is Our Complete Food Menu</h2>
     <div class="menu-grid">
