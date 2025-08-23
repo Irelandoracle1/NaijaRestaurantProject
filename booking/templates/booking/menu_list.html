@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 {% block content %}
   <h2>Menu</h2>
   <ul>
@@ -7,4 +8,93 @@
       <li>No menu items yet.</li>
     {% endfor %}
   </ul>
-{% endblock %}
+  
+  
+
+  <div class="menu-section">
+    <h2>Here is Our Complete Food Menu</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=1" alt="Food Item 1">
+            <h3>Grilled Chicken</h3>
+            <p>Juicy grilled chicken served with seasonal vegetables.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=2" alt="Food Item 2">
+            <h3>Classic Burger</h3>
+            <p>Beef patty, cheese, lettuce, and our special sauce.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=3" alt="Food Item 3">
+            <h3>Margherita Pizza</h3>
+            <p>Fresh mozzarella, basil, and tomato sauce on thin crust.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=4" alt="Food Item 4">
+            <h3>Pasta Alfredo</h3>
+            <p>Creamy Alfredo sauce with fettuccine pasta.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=5" alt="Food Item 5">
+            <h3>Caesar Salad</h3>
+            <p>Crisp romaine, parmesan, croutons, and Caesar dressing.</p>
+        </div>
+        <div class="menu-item">
+            <img src="https://picsum.photos/200/200?random=6" alt="Food Item 6">
+            <h3>Chocolate Cake</h3>
+            <p>Rich, moist chocolate cake topped with fudge frosting.</p>
+        </div>
+    </div>
+    <div class="menu-cta">
+          <a href="{% url 'booking_create' %}" class="book-btn">Book Now!</a>
+    </div>
+</div>
+
+<style>
+    .menu-section {
+        text-align: center;
+        padding: 20px;
+    }
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+    .menu-item {
+        text-align: center;
+        max-width: 220px;
+    }
+    .menu-item img {
+        border-radius: 8px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .menu-item h3 {
+        margin: 10px 0 5px;
+    }
+    .menu-item p {
+        font-size: 14px;
+        color: #555;
+    }
+   .menu-cta {
+    margin: 20px 0;
+}
+
+.book-btn {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.book-btn:hover {
+    background: #333;
+}
+</style>
+{% endblock %}
