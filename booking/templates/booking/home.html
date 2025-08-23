@@ -1,27 +1,95 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Restaurant{% endblock %}</title>
-  <link rel="stylesheet" href="https://unpkg.com/mvp.css"> <!-- quick nice defaults -->
-</head>
-<body>
-<header>
-  <nav>
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'menu' %}">Menu</a>
-    {% if user.is_authenticated %}
-      <a href="{% url 'booking_list' %}">My Bookings</a>
-      <a href="{% url 'account_logout' %}">Logout</a>
-    {% else %}
-      <a href="{% url 'account_login' %}">Login</a>
-      <a href="{% url 'account_signup' %}">Sign Up</a>
-    {% endif %}
-  </nav>
-</header>
-<main>
-  {% if messages %}{% for m in messages %}<p>{{ m }}</p>{% endfor %}{% endif %}
-  {% block content %}{% endblock %}
-</main>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div>
+        <h1>Welcome to Naija Restaurant</h1>
+        <p class="lead">Delicious meals, cozy atmosphere, and unforgettable experiences</p>
+        <a href="{% url 'booking_create' %}" class="btn btn-primary btn-lg mt-3">Book a Table</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="https://picsum.photos/400/250?pizza" alt="Restaurant Interior" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <h2>What We Offer</h2>
+            <p>At Naija Restaurant, we believe food is more than a meal – it’s an experience. 
+               Our chefs prepare every dish with passion, combining tradition and innovation 
+               to bring you flavors worth remembering.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Preview -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Chef’s Picks</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/seed/dish1/800/500" class="card-img-top" alt="Signature Grilled Chicken">
+          <div class="card-body">
+            <h5 class="card-title">Signature Grilled Chicken</h5>
+            <p class="card-text text-muted">Char-grilled chicken with herb butter and roasted veggies.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/seed/dish2/800/500" class="card-img-top" alt="Creamy Truffle Pasta">
+          <div class="card-body">
+            <h5 class="card-title">Creamy Truffle Pasta</h5>
+            <p class="card-text text-muted">Al dente pasta tossed in a silky truffle cream sauce.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/seed/dish3/800/500" class="card-img-top" alt="Seafood Platter">
+          <div class="card-body">
+            <h5 class="card-title">Seafood Platter</h5>
+            <p class="card-text text-muted">A fresh catch selection with lemon-garlic butter dip.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="{% url 'menu' %}" class="btn btn-dark mt-4">View Complete Menu</a>
+  </div>
+</section>
+
+
+<!-- Booking CTA -->
+<section class="container text-center py-5">
+    <h2>Book Your Table Now</h2>
+    <p>Reserve your spot and enjoy an unforgettable dining experience with us.</p>
+    <a href="{% url 'booking_create' %}" class="btn btn-success btn-lg">Reserve Now</a>
+</section>
+
+<!-- Info Links -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p class="text-muted">Serving delightful plates since 2005 with a passion for hospitality.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Opening Hours</h5>
+        <p class="text-muted mb-0">Mon – Sun</p>
+        <p class="text-muted">10:00 AM – 10:00 PM</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <p class="text-muted mb-0">📞 +234-800-123-4567</p>
+        <p class="text-muted">📧 info@naijarestaurant.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
