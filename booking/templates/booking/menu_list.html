@@ -1,89 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="menu-section">
+<div class="menu-section">
     <h2>Here is Our Complete Food Menu</h2>
     <div class="menu-grid">
+        {% for item in menu_items %}
         <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682435280/i1vogfvdtzygtzqbdoet.png" alt="Food Item 1">
-            <h3>Grilled Chicken</h3>
-            <p>Juicy grilled chicken served with seasonal vegetables.</p>
+            <!-- Placeholder image; later you can add an image field to Menu model -->
+            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682435280/i1vogfvdtzygtzqbdoet.png" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p><strong>${{ item.price }}</strong></p>
         </div>
-        <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682435280/yn8kq6uf9hxstvsfs2yc.png" alt="Food Item 2">
-            <h3>Classic Burger</h3>
-            <p>Beef patty, cheese, lettuce, and our special sauce.</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682435282/zg9xffkqwy4rdu2vqv9b.png" alt="Food Item 3">
-            <h3>Margherita Pizza</h3>
-            <p>Fresh mozzarella, basil, and tomato sauce on thin crust.</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682453596/images/jyysfcdwx28lbnxnto9x.webp" alt="Food Item 4">
-            <h3>Pasta Alfredo</h3>
-            <p>Creamy Alfredo sauce with fettuccine pasta.</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682453597/images/qxkfk5barowdyv3r06bb.png" alt="Food Item 5">
-            <h3>Caesar Salad</h3>
-            <p>Crisp romaine, parmesan, croutons, and Caesar dressing.</p>
-        </div>
-        <div class="menu-item">
-            <img src="https://res.cloudinary.com/dmpcp1fbi/image/upload/v1682453597/images/tuybldhckaf0nnmtv1hb.png" alt="Food Item 6">
-            <h3>Chocolate Cake</h3>
-            <p>Rich, moist chocolate cake topped with fudge frosting.</p>
-        </div>
+        {% empty %}
+        <p>No menu items available at the moment.</p>
+        {% endfor %}
     </div>
     <div class="menu-cta">
-          <a href="{% url 'booking_create' %}" class="book-btn">Book Now!</a>
+        <a href="{% url 'booking_create' %}" class="book-btn">Book Now!</a>
     </div>
 </div>
 
 <style>
-    .menu-section {
-        text-align: center;
-        padding: 20px;
-    }
-    .menu-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        justify-items: center;
-        margin-top: 20px;
-    }
-    .menu-item {
-        text-align: center;
-        max-width: 220px;
-    }
-    .menu-item img {
-        border-radius: 8px;
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    }
-    .menu-item h3 {
-        margin: 10px 0 5px;
-    }
-    .menu-item p {
-        font-size: 14px;
-        color: #555;
-    }
-   .menu-cta {
-    margin: 20px 0;
-}
-
-.book-btn {
-    display: inline-block;
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.book-btn:hover {
-    background: #333;
-}
+.menu-section { text-align: center; padding: 20px; }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center; margin-top: 20px; }
+.menu-item { text-align: center; max-width: 220px; }
+.menu-item img { border-radius: 8px; width: 200px; height: 200px; object-fit: cover; }
+.menu-item h3 { margin: 10px 0 5px; }
+.menu-item p { font-size: 14px; color: #555; }
+.menu-cta { margin: 20px 0; }
+.book-btn { display: inline-block; background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; }
+.book-btn:hover { background: #333; }
 </style>
-{% endblock %}
+{% endblock %}
