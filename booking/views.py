@@ -59,3 +59,8 @@ class BookingDeleteView(LoginRequiredMixin, OwnerRequiredMixin, DeleteView):
     model = Booking
     template_name = "booking/booking_confirm_delete.html"
     success_url = reverse_lazy("booking_list")
+
+
+
+    
+    
