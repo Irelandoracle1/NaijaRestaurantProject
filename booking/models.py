@@ -14,7 +14,7 @@ class Menu(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["id"] 
 
     def __str__(self):   # 👈 fixed
         return f"{self.name} — {self.price}"
