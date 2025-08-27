@@ -58,6 +58,10 @@ section.container img:hover {
     text-align: center;
 
 }
+.menu-header{
+    margin: auto;
+    text-align: center;
+}
 
 .book-btn {
     display: inline-block;
