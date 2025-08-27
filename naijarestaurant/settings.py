@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
+
 
 import os
 import dj_database_url
@@ -25,7 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i*oe=!j=eiflpy5l5ox%aj5h%q(l(xinvn*)&rqq8wmqv1*!$)'
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        raise ImproperlyConfigured(f"Set the {var_name} environment variable.")
+
+SECRET_KEY = get_env_variable("SPECIAL_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
