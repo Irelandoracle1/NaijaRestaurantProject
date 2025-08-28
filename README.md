@@ -358,5 +358,5 @@ https://naijarestaurantbookingsys-5ad47925ea27.herokuapp.com/
 ## Credits
 
 * Readme File inspired by Code Institute’s Blue Boar Inn project
-* Images via [Pexels] (https://pexels.com)
+* Images via [Pexels](https://pexels.com)
 * Auth UI built with Django-Allauth, styled with Bootstrap
