@@ -158,6 +158,57 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
 
 ## Testing
 
+Manual test was used in the testing of the programme.
+
+## Manual Tests
+
+| Function      | Test                                                                 | Pass |
+|---------------|----------------------------------------------------------------------|------|
+| General       | Index page fully renders with all content visible                    | ✓    |
+| General       | All links routed to correct pages                                    | ✓    |
+| General       | Menu page fully renders with all content visible                     | ✓    |
+| General       | Header collapses to dropdown on small screens                        | ✓    |
+| General       | Footer minimised on small screens                                    | ✓    |
+| General       | Latest version deployed to Heroku                                   | ✓    |
+| Access        | Users able to login with username and email                          | ✓    |
+| Access        | User given feedback as to if they are logged in or not               | ✓    |
+| Access        | Log in feedback links to register and log in pages                   | ✓    |
+| Access        | Users unable to access admin page without proper permissions         | ✓    |
+| Bookings  | Bookings only visible when logged in                             | ✓    |
+| Bookings  | User can only view Bookings they have made                       | ✓    |
+| Bookings  | Logged in user can make a Bookings                                | ✓    |
+| Bookings  | Logged in user can edit a Bookings                                | ✓    |
+| Bookings  | Logged in user can Cancel a Bookings                              | ✓    |
+| Bookings  | Logged in staff/superuser can make a Bookings                     | ✓    |
+| Bookings  | Logged in staff/superuser can edit a Bookings                     | ✓    |
+| Bookings  | Logged in staff/superuser can cancel a Bookings                   | ✓    |
+| Bookings  | Datepicker prevents user booking date prior to current date          | ✓    |
+| Bookings  | Bookings form cannot be submitted without all fields being completed | ✓ |
+| Menu          | Menu page fully renders all content to correct sections              | ✓    |
+| Menu          | Logged in staff/superuser can add menu items                         | ✓    |
+| Menu          | Logged in staff/superuser can edit menu items                        | ✓    |
+| Menu          | Logged in staff/superuser can delete menu items                      | ✓    |
+| Menu          | Menu items can only be created, edited and deleted through admin panel | ✓  |
+
+
+# HTML Validation
+
+The below pages were put through the *W3C validator*.  
+As the validator doesn't understand Django template syntax, the URL of each page was entered into the validator.
+
+| Page                     | Pass |
+|--------------------------|------|
+| base.html   | ✓    |
+| home.html   | ✓    |
+| booking_form.html | ✓ |
+| booking_list.html  | ✓ |
+| menu_list.html   | ✓    |
+| booking_confirm_delete.html | ✓    |
+| logout.html              | ✓    |
+| login.html               | ✓    |
+| password_reset.html      | ✓    |
+| signup.html              | ✓    |
+
 Includes:
 
 * Form validation tests (e.g., double-booking prevention).
@@ -166,6 +217,17 @@ Includes:
 
 ---
 
+# CSS Validation
+
+The below pages were put through the *W3C validator*.
+
+| Page                  | Pass | Message                                                                 |
+|-----------------------|------|-------------------------------------------------------------------------|
+| static/css/style.css  | ✓    | Imported style sheets are not checked in direct input and file upload modes |
+
+*Note:*  
+The single CSS style sheet passes without error, with the message listed above.  
+This simply means the check is limited only to this page.
 ## Deployment
 
 The *Naija Restaurant* application was developed using VS Code, and deployed to *GitHub* with the following steps:
