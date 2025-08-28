@@ -228,6 +228,33 @@ The below pages were put through the *W3C validator*.
 *Note:*  
 The single CSS style sheet passes without error, with the message listed above.  
 This simply means the check is limited only to this page.
+
+# PEP8 Validation
+
+The below pages were put through the *PEP8 validator* and returned no errors:
+
+| Page                        | Pass |
+|-----------------------------|------|
+| booking/admin.py               | ✓    |
+| booking/apps.py                | ✓    |
+| booking/models.py              | ✓    |
+| booking/tests.py          | ✓    |
+| booking/urls.py                | ✓    |
+| booking/views.py               | ✓    |
+| booking/forms.py               | ✓    |
+| naijarestaurant/urls.py        | ✓    |
+| naijarestaurant/asgi.py          | ✓    |
+| naijarestaurant/urls.py          | ✓    |
+| naijarestaurant/settings.py      | ✗    |
+| naijarestaurant/wsgi.py          | ✓    |
+
+---
+
+### Notes on Errors
+- *settings.py* has five *E501 line too long* errors.  
+- These are the *allauth password validators*.  
+- They cannot be fixed by adding \ without causing an error, so they have been left unaltered.  
+- This does not otherwise affect the functioning of the site.
 ## Deployment
 
 The *Naija Restaurant* application was developed using VS Code, and deployed to *GitHub* with the following steps:
