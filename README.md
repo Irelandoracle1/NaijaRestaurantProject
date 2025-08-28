@@ -35,7 +35,7 @@ The goal of *Naija Restaurant* is to create a user-friendly system where custome
 
 ## Strategy
 
-Built using the *Django framework* with *SQLite (at development) and PostgreSQL (at production), and authenticated via **Django-Allauth. The UI leverages **Bootstrap 5* for responsive and fast front-end development. The project followed Agile practices, using *user stories* managed on a [Kanban Board](https://en.wikipedia.org/wiki/Kanban_board), with features prioritized via a MoSCoW backlog to support incremental builds with constant validation.
+Built using the *Django framework* with *SQLite (at development) and PostgreSQL (at production), and authenticated via **Django-Allauth. The UI leverages **Bootstrap 5* for responsive and fast front-end development. The project followed Agile practices, using *user stories* managed on a [Kanban Board](https://github.com/users/Irelandoracle1/projects/5), with features prioritized via a MoSCoW backlog to support incremental builds with constant validation.
 
 ---
 
