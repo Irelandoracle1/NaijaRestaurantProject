@@ -14,7 +14,6 @@
   * [Should Have](#should-have)
   * [Could Have](#could-have)
   * [Won't Have](#wont-have-for-this-iteration)
-* [Project Structure](#project-structure)
 * [Authentication](#authentication)
 * [Models & Views](#models--views)
 * [Templates](#templates)
@@ -115,7 +114,7 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
 
 ---
 
-## Wireframes 🖼
+## Wireframes 
 
 - *Home Page Wireframe*  
   ![Home Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/restaurantbookingsection.jpg)
@@ -137,7 +136,7 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
 
 ---
 
-## Snapshots 📸
+## Snapshots 
 
 - *Homepage Preview*  
   ![Homepage](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/naijarestauranthomepage.png)
@@ -359,5 +358,5 @@ https://naijarestaurantbookingsys-5ad47925ea27.herokuapp.com/
 ## Credits
 
 * Readme File inspired by Code Institute’s Blue Boar Inn project
-* Images via *Pexels*
+* Images via [Pexels] (https://pexels.com)
 * Auth UI built with Django-Allauth, styled with Bootstrap
