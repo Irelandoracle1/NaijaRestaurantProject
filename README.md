@@ -152,7 +152,7 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
   ![Login Page Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/signinpic.png)
 
 - *Booking Page Preview*  
-  ![Booking Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/bookingpage.jpg)
+  ![Booking Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/bookingspic.png)
   
 ---
 
