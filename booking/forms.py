@@ -2,6 +2,7 @@ from django import forms
 from django.db import IntegrityError
 from .models import Booking
 
+
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
@@ -40,4 +41,7 @@ class BookingForm(forms.ModelForm):
         try:
             return super().save(commit=commit)
         except IntegrityError:
-            self.add_error(None, "Sorry, that date and time are already booked.")
+            self.add_error(
+                None,
+                "Sorry, that date and time are already booked."
+            )

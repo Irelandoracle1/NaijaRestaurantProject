@@ -10,6 +10,7 @@ class MenuAdmin(admin.ModelAdmin):
     list_display = ("name", "price")
     search_fields = ("name",)
 
+
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ("user", "date", "time", "guests", "menu", "created_at")

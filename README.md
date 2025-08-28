@@ -193,7 +193,7 @@ Manual test was used in the testing of the programme.
 
 # HTML Validation
 
-The below pages were put through the *W3C validator*.  
+The below pages were put through the [W3C validator](https://validator.w3.org/) 
 As the validator doesn't understand Django template syntax, the URL of each page was entered into the validator.
 
 | Page                     | Pass |
@@ -219,19 +219,19 @@ Includes:
 
 # CSS Validation
 
-The below pages were put through the *W3C validator*.
+The below pages were put through the [W3C validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
 | Page                  | Pass | Message                                                                 |
 |-----------------------|------|-------------------------------------------------------------------------|
-| static/css/style.css  | ✓    | Imported style sheets are not checked in direct input and file upload modes |
+| static/css/style.css  | ✓    | Congratulations! No Error Found.|
 
 *Note:*  
 The single CSS style sheet passes without error, with the message listed above.  
-This simply means the check is limited only to this page.
+
 
 # PEP8 Validation
 
-The below pages were put through the *PEP8 validator* and returned no errors:
+The below pages were put through the [PEP8 validator](https://pep8ci.herokuapp.com/#) and returned no errors:
 
 | Page                        | Pass |
 |-----------------------------|------|
