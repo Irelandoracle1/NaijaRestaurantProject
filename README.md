@@ -35,7 +35,7 @@ The goal of *Naija Restaurant* is to create a user-friendly system where custome
 
 ## Strategy
 
-Built using the *Django framework* with *SQLite or PostgreSQL, and authenticated via **Django-Allauth. The UI leverages **Bootstrap 5* for responsive and fast front-end development. The project followed Agile practices, with features prioritized via a MoSCoW backlog to support incremental builds with constant validation.
+Built using the *Django framework* with *SQLite (at development) and PostgreSQL (at production), and authenticated via **Django-Allauth. The UI leverages **Bootstrap 5* for responsive and fast front-end development. The project followed Agile practices, using *user stories* managed on a [Kanban Board](https://en.wikipedia.org/wiki/Kanban_board), with features prioritized via a MoSCoW backlog to support incremental builds with constant validation.
 
 ---
 
@@ -55,7 +55,7 @@ Built using the *Django framework* with *SQLite or PostgreSQL, and authenticated
 * Admin can create/edit/delete bookings via the admin panel.
 * Authenticated users can register, log in, and manage bookings.
 * Prevent double bookings by enforcing unique date+time.
-* All functionality must be tested with unit tests.
+* All functionality must be tested manually.
 
 ### Should Have
 
@@ -97,7 +97,7 @@ Built using the *Django framework* with *SQLite or PostgreSQL, and authenticated
   * Constraints: Unique date+time to prevent double bookings.
   * Validation: Prevent bookings in the past.
 
-* *Menu* (optional or static)
+* *Menu* 
   * Holds item names, descriptions, prices.
   * Displayed on "Menu" page for customers.
 
@@ -109,7 +109,7 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
 
 * base.html – Website shell with navbar & footer.
 * home.html – Hero image, intro, call-to-action.
-* menu.html – Static menu display with items and descriptions.
+* menu_list.html – Static menu display with items and descriptions.
 * Auth Pages – Bootstrap-styled login/signup overriding Django-Allauth defaults.
 * Booking pages – Responsive forms and CRUD views for customers.
 
@@ -118,27 +118,42 @@ Views handle listing, creating, updating, and deleting bookings with proper acce
 ## Wireframes 🖼
 
 - *Home Page Wireframe*  
-  ![Home Wireframe](https://via.placeholder.com/600x400.png?text=Home+Wireframe)
+  ![Home Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/restaurantbookingsection.jpg)
+  
+  - *Registration Page Wireframe*  
+  ![Booking Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/registrationpage.jpg)
+
+- *Login Page Wireframe*  
+  ![Booking Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/loginpage.jpg)
 
 - *Menu Page Wireframe*  
-  ![Menu Wireframe](https://via.placeholder.com/600x400.png?text=Menu+Wireframe)
+  ![Menu Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/menupage.jpg)
 
 - *Booking Page Wireframe*  
-  ![Booking Wireframe](https://via.placeholder.com/600x400.png?text=Booking+Wireframe)
+  ![Booking Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/bookingpage.jpg)
+
+- ** manage Booking Page Wireframe**  
+  ![Booking Wireframe](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/managebookingspage.jpg)
 
 ---
 
 ## Snapshots 📸
 
 - *Homepage Preview*  
-  ![Homepage](https://via.placeholder.com/800x450.png?text=Homepage+Preview)
+  ![Homepage](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/naijarestauranthomepage.png)
 
 - *Menu Page Preview*  
-  ![Menu Preview](https://via.placeholder.com/800x450.png?text=Menu+Page+Preview)
+  ![Menu Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/menupic1.png)
+
+  - *Sign up Page Preview*  
+  ![Sign Up Page Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/signuppic.png)
+
+  - *Login Page Preview*  
+  ![Login Page Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/loginpage.jpg)
 
 - *Booking Page Preview*  
-  ![Booking Preview](https://via.placeholder.com/800x450.png?text=Booking+Page+Preview)
-
+  ![Booking Preview](https://github.com/Irelandoracle1/NaijaRestaurantProject/blob/main/images/bookingpage.jpg)
+  
 ---
 
 ## Testing
@@ -153,13 +168,96 @@ Includes:
 
 ## Deployment
 
-1. Run python manage.py migrate
-2. Collect static files via python manage.py collectstatic
-3. Set DEBUG=False for production
-4. Deploy steps can be for platforms like Heroku / Render / Vercel:
-   * Create app
-   * Configure environment variables (SECRET_KEY, DB)
-   * Push changes from GitHub
+The *Naija Restaurant* application was developed using VS Code, and deployed to *GitHub* with the following steps:
+
+### Save & Commit Changes
+1. Save your files as usual.
+2. To commit changes:
+   bash
+   git add .
+   git commit -m "summarise changes"
+`
+
+3. Push changes to GitHub:
+
+   bash
+   git push
+   
+
+---
+
+### Deploy Locally
+
+To run the project locally:
+
+bash
+python manage.py runserver
+
+
+Then select *Open in Browser* from the popup.
+
+---
+
+### Prior to Deployment
+
+1. If static files have changed, collect them:
+
+   bash
+   python3 manage.py collectstatic
+   
+
+   Enter *yes* if prompted to overwrite existing files.
+2. In settings.py, set:
+
+   python
+   DEBUG = False
+   
+
+   for production.
+3. Add, commit, and push changes to GitHub.
+
+---
+
+### Heroku Deployment
+
+The project is deployed on *Heroku*.
+
+1. Log in to [Heroku](https://heroku.com), or create an account.
+
+2. To create a new app:
+
+   * Navigate to the dashboard → *New* → *Create new app*.
+   * Provide a unique app name (use hyphens instead of spaces).
+   * Select your region → *Create app*.
+
+3. In the app settings:
+
+   * Navigate to *Reveal Config Vars*.
+   * Add:
+
+     * DATABASE_URL → value of your PostgreSQL database.
+     * SECRET_KEY → your secret key (from env.py).
+
+4. Navigate to the *Deployment* tab:
+
+   * Connect to your GitHub repository.
+   * Optionally enable automatic deployment.
+   * Click *Deploy Branch* to deploy the project.
+
+5. To update deployments:
+
+   * Push changes to GitHub.
+   * On Heroku, navigate to the deployment tab and click *Deploy Branch*.
+
+---
+
+### Live App
+
+The deployed app is available at the Heroku URL below...
+
+
+https://naijarestaurantbookingsys-5ad47925ea27.herokuapp.com/
+
 
 ---
 
@@ -167,13 +265,13 @@ Includes:
 
 * *Python, **Django, **Django-Allauth*
 * *Bootstrap 5* (via CDN)
-* Optional: SQLite or PostgreSQL
-* Optional: Cloudinary (for image hosting in advanced iterations)
+* SQLite(Local Development) and PostgreSQL(Production)
+* Cloudinary (for image hosting in advanced iterations)
 
 ---
 
 ## Credits
 
-* Layout and logic inspired by Code Institute’s Blue Boar Inn project
-* Placeholder images via *Picsum.photos*
-* Auth UI built with Django-Allauth, styled with Bootstrap
+* Readme File inspired by Code Institute’s Blue Boar Inn project
+* Images via *Pexels*
+* Auth UI built with Django-Allauth, styled with Bootstrap
