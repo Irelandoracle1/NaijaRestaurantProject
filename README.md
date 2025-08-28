@@ -245,16 +245,13 @@ The below pages were put through the [PEP8 validator](https://pep8ci.herokuapp.c
 | naijarestaurant/urls.py        | ✓    |
 | naijarestaurant/asgi.py          | ✓    |
 | naijarestaurant/urls.py          | ✓    |
-| naijarestaurant/settings.py      | ✗    |
+| naijarestaurant/settings.py      | ✓   |
 | naijarestaurant/wsgi.py          | ✓    |
 
 ---
 
 ### Notes on Errors
-- *settings.py* has five *E501 line too long* errors.  
-- These are the *allauth password validators*.  
-- They cannot be fixed by adding \ without causing an error, so they have been left unaltered.  
-- This does not otherwise affect the functioning of the site.
+- No errors, all fixed.
 ## Deployment
 
 The *Naija Restaurant* application was developed using VS Code, and deployed to *GitHub* with the following steps:
